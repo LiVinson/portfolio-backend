@@ -13,19 +13,17 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 //Sets acceptable origins for cors
 const corsConfig = {
-  origin: ["http://localhost:3001", "https://www.lisavinson.com", "http://www.lisavinson.com"],
+  origin: ["https://www.lisavinson.com", "http://www.lisavinson.com"],
   optionsSuccessStatus: 200
 }
 
 // //When user submits contact form, confirm data again, and send email
 app.post("/contact", cors(corsConfig), verifyOrigin, confirmInput, sendEmail)
 
-app.post("/contact", cors(corsConfig), verifyOrigin, confirmInput, sendEmail)
-
 //Verifies if the origin of request is from portfolio. If not, ends transaction
 function verifyOrigin (req,res, next) {
   const clientOrigin = req.headers.origin
-  const permittedOrigins = ["http://localhost:3001"]
+  const permittedOrigins = ["https://www.lisavinson.com", "http://www.lisavinson.com"]
 
   if (permittedOrigins.includes(clientOrigin)) {
     
