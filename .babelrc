@@ -1,0 +1,13 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            // used to handled 'referenceError: regeneratorRuntime' caused by async functions in server
+            {
+                "targets": {
+                  "esmodules": true
+                }
+            }
+        ]
+    ]
+}

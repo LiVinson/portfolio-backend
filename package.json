@@ -1,0 +1,32 @@
+{
+  "name": "portfolio-back",
+  "version": "1.0.0",
+  "description": "backend for portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "buildDev": "rm -rf dist && webpack --mode development --config webpack.server.config.js",
+    "buildProd": "rm -rf dist && webpack --mode production --config webpack.server.config.js",
+    "start": "node ./dist/server.js"
+  },
+  "keywords": [],
+  "author": "Lisa Vinson",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "nodemailer": "^6.4.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "engines": {
+    "node": "12.x"
+  }
+}
